@@ -106,7 +106,7 @@ router.post("/", validate(ChatSchema), async (req, res, next) => {
     try {
       const completion = await Promise.race([
         client.messages.create({
-          model: "claude-sonnet-4-20250514",
+          model: "claude-haiku-4-5-20251001",
           max_tokens: 512,
           system: buildSystemPrompt(sim),
           messages: contextMessages,
@@ -256,3 +256,4 @@ router.post("/", validate(ChatSchema), async (req, res, next) => {
 });
 
 export default router;
+
